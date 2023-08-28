@@ -1,0 +1,142 @@
+if game.PlaceId == 10534865425 then
+ 
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "BaconBoss Hub | 🛸 HOOP SIMULATOR! 🏀", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+_G.farm = true
+_G.farm2 = true
+_G.speed = true
+_G.str = true
+_G.acc = true
+_G.egg = true
+
+
+
+function farm()
+        while _G.farm == true do
+        game:GetService("ReplicatedStorage"):FindFirstChild("events-kog"):FindFirstChild("94033052-e5bc-42e1-9e8d-96356aeae832"):FireServer(100)
+        wait(10)
+    end
+end
+
+function farm2()
+     while _G.farm2 == true do
+     game:GetService("ReplicatedStorage"):FindFirstChild("events-kog"):FindFirstChild("94033052-e5bc-42e1-9e8d-96356aeae832"):FireServer(100)
+     wait(2)
+    end
+end
+
+function speed()
+     while _G.speed == true do
+     game:GetService("ReplicatedStorage"):FindFirstChild("events-kog"):FindFirstChild("1a584309-e081-45db-ad7d-72e5cc4196ec"):FireServer("speed",1)
+     wait(0.1)
+    end
+end
+
+function str()
+     while _G.str == true do
+     game:GetService("ReplicatedStorage"):FindFirstChild("events-kog"):FindFirstChild("1a584309-e081-45db-ad7d-72e5cc4196ec"):FireServer("strength",1)
+     wait(0.1)
+    end
+end
+
+function acc()
+     while _G.acc == true do
+     game:GetService("ReplicatedStorage"):FindFirstChild("events-kog"):FindFirstChild("1a584309-e081-45db-ad7d-72e5cc4196ec"):FireServer("accuracy",1)
+     wait(0.1)
+    end
+end
+
+function egg()
+      while _G.egg == true do
+        game:GetService("ReplicatedStorage"):FindFirstChild("events-kog"):FindFirstChild("133ce982-1806-484a-879c-b676f6b05dcb"):FireServer("spawn",false)
+      wait(5)
+   end
+end
+
+local MainTab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local upTab = Window:MakeTab({
+	Name = "Upgrade",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local eggTab = Window:MakeTab({
+	Name = "Chest",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+MainTab:AddLabel("Note: Fast Auto Hoop Use For Hoop Farm | Stay At The First World")
+
+MainTab:AddToggle({
+	Name = "Auto Hoop (Fast)",
+	Default = false,
+	Callback = function(Value)
+		_G.farm2 = Value
+        farm2()
+	end    
+})
+
+MainTab:AddLabel("Note: Slow Auto Hoop Use For Ring Farm | Stay At The Last World")
+
+MainTab:AddToggle({
+	Name = "Auto Hoop (Slow)",
+	Default = false,
+	Callback = function(Value)
+		_G.farm = Value
+        farm()
+	end    
+})
+
+upTab:AddToggle({
+	Name = "Auto Upgrade Speed",
+	Default = false,
+	Callback = function(Value)
+		_G.speed = Value
+        speed()
+	end    
+})
+
+upTab:AddToggle({
+	Name = "Auto Upgrade Strength",
+	Default = false,
+	Callback = function(Value)
+		_G.str = Value
+        str()
+	end    
+})
+
+upTab:AddToggle({
+	Name = "Auto Upgrade Accuracy",
+	Default = false,
+	Callback = function(Value)
+		_G.acc = Value
+        acc()
+	end    
+})
+
+eggTab:AddToggle({
+	Name = "Auto Open Cheapest Chest",
+	Default = false,
+	Callback = function(Value)
+		_G.egg = Value
+        egg()
+	end    
+})
+
+MainTab:AddLabel("Note: Use This To Change Your Speed")
+
+MainTab:AddButton({
+	Name = "Inf Yeild",
+	Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+  	end    
+})
+
+end
