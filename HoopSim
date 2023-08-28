@@ -50,7 +50,7 @@ end
 function egg()
       while _G.egg == true do
         game:GetService("ReplicatedStorage"):FindFirstChild("events-kog"):FindFirstChild("133ce982-1806-484a-879c-b676f6b05dcb"):FireServer("spawn",false)
-      wait(5)
+      wait(6)
    end
 end
 
